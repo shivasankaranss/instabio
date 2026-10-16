@@ -28,7 +28,7 @@ body{
     radial-gradient(55vmax 55vmax at 90% 85%, var(--teal) 0%, transparent 62%),
     linear-gradient(160deg,#0a0e2a,#12163f 55%,#0b1a33);}
 .figure{position:absolute;left:50%;top:52%;width:min(105vw,92vh,760px);aspect-ratio:1;
-  transform:translate(-50%,-50%);opacity:.9}
+  transform:translate(-50%,-50%);opacity:1}
 .figure svg{width:100%;height:100%;display:block}
 .breathe{transform-origin:50% 50%;animation:breathe 9s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(1.035)}}
@@ -65,11 +65,19 @@ h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,8vw,2
   line-height:1.1;letter-spacing:-.01em;text-shadow:0 2px 24px rgba(10,14,42,.6)}
 .section{display:inline-block;margin-top:14px;padding:7px 20px;border-radius:999px;
   font-weight:600;font-size:1rem;letter-spacing:.06em}
-.list-card{width:100%;border-radius:32px;padding:24px 18px 14px}
+.list-card{width:100%;border-radius:32px;padding:24px 18px 14px;
+  background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 55%,rgba(255,255,255,.06));
+  -webkit-backdrop-filter:blur(0) saturate(160%) brightness(1.08);
+  backdrop-filter:blur(0) saturate(160%) brightness(1.08);
+  border-color:rgba(255,255,255,.34);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.18),
+    inset 1px 0 0 rgba(255,255,255,.12),inset -1px 0 0 rgba(255,255,255,.12),
+    inset 0 0 30px rgba(255,255,255,.04),0 14px 36px rgba(3,5,25,.28)}
+.list-card h2,.list-card li{text-shadow:0 1px 10px rgba(8,12,38,.85),0 0 2px rgba(8,12,38,.6)}
 h2{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.35rem;padding:0 8px 12px}
 ul{list-style:none;padding:0}
 li{padding:15px 10px;font-size:1.05rem;line-height:1.4;color:var(--ink);
-  border-top:1px solid rgba(255,255,255,.14)}
+  border-top:1px solid rgba(255,255,255,.18)}
 li:first-child{border-top:0}
 .status{padding:16px 10px;color:var(--ink-soft);font-size:.98rem}
 @media (prefers-reduced-motion:reduce){.breathe{animation:none}.om{display:none}}
@@ -89,8 +97,8 @@ li:first-child{border-top:0}
           <stop offset="1" stop-color="#b7a6ff" stop-opacity="0"/>
         </radialGradient>
         <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#ffd9a0" stop-opacity=".55"/>
-          <stop offset="1" stop-color="#b7a6ff" stop-opacity=".16"/>
+          <stop offset="0" stop-color="#ffd9a0" stop-opacity=".7"/>
+          <stop offset="1" stop-color="#b7a6ff" stop-opacity=".26"/>
         </linearGradient>
       </defs>
       <g class="breathe">
@@ -99,7 +107,7 @@ li:first-child{border-top:0}
           <circle cx="300" cy="260" r="120"/><circle cx="300" cy="260" r="175"/><circle cx="300" cy="260" r="230"/>
         </g>
         <!-- lotus petals -->
-        <g fill="#b7a6ff" fill-opacity=".10" stroke="#fff" stroke-opacity=".22">
+        <g fill="#b7a6ff" fill-opacity=".16" stroke="#fff" stroke-opacity=".35">
           <path d="M300 520C250 505 190 480 150 440c50-8 100 10 150 80z"/>
           <path d="M300 520C350 505 410 480 450 440c-50-8-100 10-150 80z"/>
           <path d="M300 520C262 480 232 430 232 385c40 22 62 70 68 135z"/>
@@ -108,14 +116,14 @@ li:first-child{border-top:0}
         </g>
         <!-- crossed legs -->
         <path d="M120 450c30-48 110-62 180-62s150 14 180 62c-60 22-120 30-180 30s-120-8-180-30z"
-              fill="url(#body)" stroke="#ffd9a0" stroke-opacity=".4"/>
+              fill="url(#body)" stroke="#ffd9a0" stroke-opacity=".6"/>
         <!-- torso -->
         <path d="M300 205c-52 0-84 36-92 88-6 44 4 70 8 98 28 14 56 18 84 18s56-4 84-18c4-28 14-54 8-98-8-52-40-88-92-88z"
-              fill="url(#body)" stroke="#ffd9a0" stroke-opacity=".4"/>
+              fill="url(#body)" stroke="#ffd9a0" stroke-opacity=".6"/>
         <!-- head -->
         <circle cx="300" cy="160" r="42" fill="url(#body)" stroke="#ffd9a0" stroke-opacity=".5"/>
         <!-- hands resting -->
-        <ellipse cx="300" cy="398" rx="46" ry="14" fill="#ffd9a0" fill-opacity=".28" stroke="#ffd9a0" stroke-opacity=".4"/>
+        <ellipse cx="300" cy="398" rx="46" ry="14" fill="#ffd9a0" fill-opacity=".28" stroke="#ffd9a0" stroke-opacity=".6"/>
         <!-- crown glow -->
         <circle cx="300" cy="96" r="6" fill="#f4b860" fill-opacity=".8"/>
       </g>
